@@ -1,42 +1,17 @@
 {
   "compilerOptions": {
     "target": "esnext",
+    "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
-    "strictFunctionTypes": false,
     "jsx": "preserve",
-    "baseUrl": ".",
-    "allowJs": true,
     "sourceMap": true,
-    "esModuleInterop": true,
     "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "types": [
-      "vite/client"
-    ],
-    "typeRoots": [
-      "./node_modules/@types/",
-      "./types"
-    ],
-    "noImplicitAny": false,
-    "skipLibCheck": true,
-    "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "/#/*": [
-        "types/*"
-      ]
-    }
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts",
@@ -48,12 +23,12 @@
     "build/**/*.ts",
     "build/**/*.d.ts",
     "mock/**/*.ts",
-    "components.d.ts",
     "vite.config.ts"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "**/*.js"
-  ]
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
